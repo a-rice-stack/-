@@ -6,17 +6,24 @@ window.title("연타")
 window.geometry("600x500+100+100")
 window.resizable(True, True)
 
-count=100000000
-
-def countDOWN():
-    global count
-    count -=5
-    label.config(text=str(count))
-
 label = tkinter.Label(window, text="0이 될때까지 눌러")
 label.pack()
 
-button = tkinter.Button(window, overrelief="groove", width=15, height=10, command=countDOWN, repeatdelay=500, repeatinterval=100, text = "눌러")
+count=100000000
+
+def countUP():
+    global count
+    count -=5
+    label.config(text=str(count), height= 20)
+
+label = tkinter.Label(window, text="100000000", height=20)
+label.pack()
+
+
+button = tkinter.Button(window, overrelief="groove", width=15, height=10, command=countUP, repeatdelay=500, repeatinterval=100, text = "눌러")
 button.place(x=240, y=250)
 
+
 window.mainloop()
+
+
